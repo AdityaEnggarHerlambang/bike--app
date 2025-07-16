@@ -6,7 +6,7 @@ import streamlit as st
 # Ekstrak zip jika belum ada file pkl
 if not os.path.exists("bike_app/bike_model.pkl"):
     with zipfile.ZipFile("bike_app/bike_model.zip", 'r') as zip_ref:
-        zip_ref.extractall("bike_app")
+    zip_ref.extractall(".")
 
 # Load model
 model = joblib.load("bike_app/bike_model.pkl")
