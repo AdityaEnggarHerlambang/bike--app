@@ -4,12 +4,12 @@ import joblib
 import streamlit as st
 
 # Ekstrak zip jika belum ada file pkl
-if not os.path.exists("bike_app/bike_model.pkl"):
-    with zipfile.ZipFile("bike_app/bike_model.zip", 'r') as zip_ref:
-    zip_ref.extractall(".")
+if not os.path.exists("bike_model.pkl"):
+    with zipfile.ZipFile("bike_model.zip", 'r') as zip_ref:
+        zip_ref.extractall(".")
 
 # Load model
-model = joblib.load("bike_app/bike_model.pkl")
+model = joblib.load("bike_model.pkl")
 
 # Contoh tampilan Streamlit
 st.title("Prediksi Sepeda")
