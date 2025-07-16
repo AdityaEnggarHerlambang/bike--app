@@ -1,6 +1,14 @@
 import streamlit as st
 import joblib
 import numpy as np
+import os
+import gdown
+
+MODEL_URL = "https://drive.google.com/drive/folders/1FJW_BL2jsDR2XfAVXbTrSVjLlo0fSLPx?usp=sharing"
+MODEL_PATH = "bike_model.pkl"
+
+if not os.path.exists(MODEL_PATH):
+    gdown.download(MODEL_URL, MODEL_PATH, quiet=False)
 
 model = joblib.load("bike_model.pkl")
 
